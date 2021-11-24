@@ -9,8 +9,12 @@ app.use(express.static("public"));
 //   res.send("Home Page");
 // });
 
-app.get("/hola-mundo", (req, res) => {
-  res.send("Hello World");
+app.get("/generic", (req, res) => {
+  res.sendFile(__dirname + "/public/generic.html");
+});
+
+app.get("/elements", (req, res) => {
+  res.sendFile(__dirname + "/public/elements.html");
 });
 
 app.get("*", (req, res) => {
